@@ -7,10 +7,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Contacts <span class="sr-only">(current)</span></a>
+          <router-link class="nav-link" to="contacts">Contacts</router-link>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Add contacts <span class="sr-only">(current)</span></a>
+        <router-link class="nav-link" to="add-contact">Add contacts</router-link>
       </li>
     </ul>
   </div>
