@@ -1,7 +1,7 @@
 <template>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">ContactsApp</a>
+  <router-link class="navbar-brand" to="contacts">ContactsApp</router-link>
   
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
