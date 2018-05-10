@@ -12,13 +12,21 @@ Vue.use(VueRouter)
 const routes = [
   { path: '/', redirect: '/contacts' },
   { path: '/contacts', component: Contacts, name: 'contacts' },
-  { path: '/add-contact', component: AddContact},
-  { path: '/contacts/:id', component: Contacts, name: 'contact-details' }
+  { path: '/add-contact', component: AddContact, name: 'add-contact'},
+  { path: '/contacts/:id', component: Contacts, name: 'contact-details' },
+  { path: '/edit-contact/:id', component: AddContact, name: 'edit-contact'}
 ]
 
 const router = new VueRouter({
   routes,
   mode: 'history'
+})
+
+// Global mixin
+Vue.mixin({
+  created(){
+    console.log('Global mixin')
+  }
 })
 
 new Vue({
