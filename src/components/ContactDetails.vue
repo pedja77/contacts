@@ -9,7 +9,13 @@
         <li class="list-group-item">
           <router-link 
             class="btn btn-primary" 
-            :to="{name: 'edit-contact', params: {id: contact.id}}">
+            :to="{name: 'edit-contact', params: {
+              id: contact.id,
+              first_name: contact.first_name,
+              last_name: contact.last_name,
+              email: contact.email,
+              number: contact.number
+              }}">
             Edit
             </router-link></li>
       </ul>

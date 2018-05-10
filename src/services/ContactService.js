@@ -16,6 +16,10 @@ export default class ContactService {
         return axios.delete(`/contacts/${id}`)
     }
 
+    editContact(id, contact) {
+        return axios.put(`/contacts/${id}`, contact)
+    }
+
 }
 
 export const contact = new ContactService()

@@ -38,7 +38,6 @@
 import { contact } from '../services/ContactService' 
 
 export default {
-  props: ['contacts'],
   data() {
     return {
       contact: {
@@ -51,13 +50,18 @@ export default {
   },
   methods: {
     submit() {
-      contact.saveContact(this.contact)
-        .then(response => this.$router.push('/contacts'))
+      if (this.$route.params.id) {
+        contact.editContact(this.$route.params.id, this.contact)
+          .then(response => this.$router.push('/contacts'))
+      } else {
+        contact.saveContact(this.contact)
+          .then(response => this.$router.push('/contacts'))
+      }
     }
   },
   created() {
     if (this.$route.params.id) {
-      this.contact = contacts.find(contact => contact.id === this.$route.params.id)
+      this.contact =  this.$route.params
     }
   }
 
